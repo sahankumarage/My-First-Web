@@ -1,26 +1,65 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --color-primary: #ff6b00;
+  /* Vibrant Orange */
+  --color-secondary: #ff9d00;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+:root {
+  --background: #ffffff;
+  --foreground: #0a0a0a;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #050505;
+    --foreground: #fafafa;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+/* Custom Utilities for Premium Look */
+@layer utilities {
+  .glass {
+    @apply bg-white/10 backdrop-blur-lg border border-white/20;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-linear-to-r from-orange-500 to-yellow-500;
+  }
+
+  .blob-animation {
+    filter: blur(60px);
+    transition: all 0.5s ease-in-out;
+  }
+
+  .animate-float {
+    animation: float 20s infinite alternate linear;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  33% {
+    transform: translate(10%, 10%) scale(1.1);
+  }
+
+  66% {
+    transform: translate(-5%, 15%) scale(0.9);
+  }
+
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
 }
