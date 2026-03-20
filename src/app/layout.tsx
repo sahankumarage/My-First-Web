@@ -13,8 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Brew & Co. | Premium Coffee",
-  description: "Experience the perfect blend of ethically sourced beans, artisanal roasting, and a cozy atmosphere.",
+  title: "Ceylon Curated | Handcrafted Sri Lanka Travel Experiences",
+  description:
+    "Handcrafted, immersive journeys across Sri Lanka. Small groups, ethical travel, and deeply personal experiences co-designed with local communities.",
 };
 
 import { StudentProvider } from "@/context/StudentContext";
